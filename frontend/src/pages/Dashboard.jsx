@@ -6,6 +6,10 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
+  const [showCreate, setShowCreate] = useState(false);
+  const [roomName, setRoomName] = useState("");
+  const [joinCode, setJoinCode] = useState("");
+  const [showJoin, setShowJoin] = useState(false);
 
   useEffect(() => {
     if (!user) {
@@ -22,11 +26,35 @@ const Dashboard = () => {
     };
     fetchRooms();
   }, []);
+
+  const handleCreateRoom = async () => {
+    if (!roomName.trim()) return;
+    try {
+      const res = await api.post("/rooms", { name: roomName });
+      setRoomName("");
+      setShowCreate(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleJoinRoom = async () => {
+    if (!joinCode.trim()) return;
+    try {
+      const res = await api.post("/rooms/join", {code:joinCode });
+      setRooms([...rooms, res.data.room]);
+      setJoinCode("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     navigate("/login");
   };
+
   if (!user) return null;
   return (
     <div className="dash-container">
@@ -43,11 +71,34 @@ const Dashboard = () => {
         <div className="room-space">
           <h1>My Rooms</h1>
           {user.role === "teacher" ? (
-            <button className="create-room">+ Create Room</button>
+            <button className="create-room" onClick={()=>setShowCreate(!showCreate)}>+ Create Room</button>
           ) : (
-            <button className="create-room">+ Join Room</button>
+            <button className="create-room" onClick={()=> setShowJoin(!showJoin)} >+ Join Room</button>
           )}
         </div>
+
+        {showCreate && user.role === "teacher" && (
+          <div className="input-box">
+            <input
+              placeholder="Room name"
+              value={roomName}
+              onChange={(e) => setRoomName(e.target.value)}
+            />
+            <button onClick={handleCreateRoom}>Create</button>
+          </div>
+        )}
+
+        {showJoin && user.role === "student" && (
+          <div className="input-box">
+            <input
+              placeholder="Enter room code"
+              value={joinCode}
+              onChange={(e) => setJoinCode(e.target.value)}
+            />
+            <button onClick={handleJoinRoom}>Join</button>
+          </div>
+        )}
+
         {rooms.map((room) => (
           <div className="Rooms" key={room._id}>
             <div className="Room-name">
