@@ -1,0 +1,54 @@
+.dash-container{
+    height: 100vh;
+}
+
+.dash-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.side-area{
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+
+.dash-nav {
+  border-bottom: 2px solid black;
+}
+
+.room-space{
+display: flex;
+justify-content: space-between;
+padding:10px;
+margin:10px;
+}
+
+.Rooms{
+    margin:20px;
+}
+
+.Room-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border:3px solid black;
+    border-radius: 4px;
+}
+
+.create-room{
+    padding:5px 10px;
+    cursor: pointer;
+}
+
+.open{
+    padding:5px 20px;
+    cursor: pointer;
+}
+
+.logout-button{
+padding: 5px 10px;
+
+}

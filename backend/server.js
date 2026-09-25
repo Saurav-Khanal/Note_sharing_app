@@ -23,7 +23,3 @@ app.use("/api/rooms", require("./src/routes/rooms.js"));
 app.use("/api/notes", require("./src/routes/notes.js"));
 app.listen(port,()=>console.log(`server running on ${port}`));
 
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhYjM5NDA1MjNlMjkyOWYzYzNkZmIzNCIsImlhdCI6MTc5MDE1Mzk1NCwiZXhwIjoxNzkwNzU4NzU0fQ.DAPL5zkcL3tRSGRV6ji3zBakR0l6xwI7hYP9IoXimCw
-
-// 4KS4NX
