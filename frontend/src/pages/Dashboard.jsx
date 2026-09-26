@@ -106,7 +106,7 @@ const Dashboard = () => {
                 <h2>{room.name}</h2>
                 <p>code:{room.code}</p>
               </div>
-              <button className="open">open</button>
+              <button className="open" onClick={()=>navigate(`/room/${room._id}`)}>open</button>
             </div>
           </div>
         ))}

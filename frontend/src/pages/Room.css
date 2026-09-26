@@ -1,0 +1,43 @@
+.room-container{
+    padding: 30px;
+}
+
+.room-nav{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 20px;
+    border-bottom: 2px solid black;
+}
+.room-nav button{
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.upload-btn{
+    padding: 5px 10px;
+    margin: 20px 10px 5px;
+}
+
+p{
+    margin:5px 20px;
+}
+
+.upload-form{
+    display: flex;
+    gap:40px;
+    margin: 5px 20px 20px 10px;
+}
+.upload-form input{
+    padding: 5px;
+}
+.upload-form button{
+    padding: 5px 10px;
+}
+
+.note-card{
+    display: flex;
+    justify-content: space-between;
+    border:2px solid black;
+    padding: 10px 20px;
+}
+

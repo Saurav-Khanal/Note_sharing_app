@@ -3,6 +3,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom" ;
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from './pages/Dashboard';
+import Room from './pages/Room'
 const App = () => {
   return (
     <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/Dashboard" element={<Dashboard/>}/>
       <Route path="/" element={<Login/>}/>
+      <Route path='/Room/:id' element={<Room/>}/>
     </Routes>
     </BrowserRouter>
   )
