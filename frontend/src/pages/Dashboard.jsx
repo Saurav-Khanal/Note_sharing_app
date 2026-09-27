@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import api from "../api/api";
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
-
 const Dashboard = () => {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState([]);
@@ -11,7 +10,8 @@ const Dashboard = () => {
   const [roomName, setRoomName] = useState("");
   const [joinCode, setJoinCode] = useState("");
   const [showJoin, setShowJoin] = useState(false);
-
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -32,6 +32,7 @@ const Dashboard = () => {
     if (!roomName.trim()) return;
     try {
       const res = await api.post("/rooms", { name: roomName });
+      setRooms([...rooms,res.data.room]);
       setRoomName("");
       setShowCreate(false);
     } catch (err) {
@@ -42,7 +43,7 @@ const Dashboard = () => {
   const handleJoinRoom = async () => {
     if (!joinCode.trim()) return;
     try {
-      const res = await api.post("/rooms/join", {code:joinCode });
+      const res = await api.post("/rooms/join", { code: joinCode });
       setRooms([...rooms, res.data.room]);
       setJoinCode("");
     } catch (err) {
@@ -54,6 +55,19 @@ const Dashboard = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     navigate("/login");
+  };
+
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      setSearchResults([]);
+      return;
+    }
+    try {
+      const res = await api.get(`/notes/search?q=${searchQuery}`);
+      setSearchResults(res.data.notes);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   if (!user) return null;
@@ -72,10 +86,30 @@ const Dashboard = () => {
         <div className="room-space">
           <h1>My Rooms</h1>
           {user.role === "teacher" ? (
-            <button className="create-room" onClick={()=>setShowCreate(!showCreate)}>+ Create Room</button>
+            <button
+              className="create-room"
+              onClick={() => setShowCreate(!showCreate)}
+            >
+              + Create Room
+            </button>
           ) : (
-            <button className="create-room" onClick={()=> setShowJoin(!showJoin)} >+ Join Room</button>
+            <button
+              className="create-room"
+              onClick={() => setShowJoin(!showJoin)}
+            >
+              + Join Room
+            </button>
           )}
+        </div>
+
+        <div className="search-bar">
+          <input
+            className="search-input"
+            placeholder="Search notes..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button onClick={handleSearch}>Search</button>
         </div>
 
         {showCreate && user.role === "teacher" && (
@@ -107,10 +141,37 @@ const Dashboard = () => {
                 <h2>{room.name}</h2>
                 <p>code:{room.code}</p>
               </div>
-              <button className="open" onClick={()=>navigate(`/room/${room._id}`)}>open</button>
+              <button
+                className="open"
+                onClick={() => navigate(`/room/${room._id}`)}
+              >
+                open
+              </button>
             </div>
           </div>
         ))}
+        {
+          searchResults.length>0&&(
+            <div className="search-results">
+              <h3>Search Results</h3>
+              {searchResults.map((note)=>(
+                <div className="note-card" key={note._id}>
+                  <div>
+                    <h3>{note.title}</h3>
+                    <p>{note.subject}</p>
+                    </div>
+                    <a
+                    href={`http://localhost:5000${note.fileUrl}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    >
+                    View
+                    </a>
+                    </div>
+              ))}
+              </div>
+          )
+        }
       </div>
     </div>
   );

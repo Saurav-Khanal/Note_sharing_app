@@ -1,11 +1,12 @@
 .dash-container{
     height: 100vh;
+    padding: 20px;
 }
 
 .dash-nav{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding-bottom: 10px;
 }
 
 .side-area{
@@ -21,8 +22,8 @@
 .room-space{
 display: flex;
 justify-content: space-between;
-padding:10px;
-margin:10px;
+margin-top: 15px;
+margin-bottom: 20px;
 }
 
 .Rooms{
@@ -61,16 +62,27 @@ padding: 5px 10px;
 
 .input-box input{
     padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
     flex:1;
+    margin-top:10px;
 }
 
 .input-box button{
-    padding: 8px 15px;
-    border-radius: 4px;
+    padding: 5px 20px;
     cursor: pointer;
-    border:none;
-    background-color: blue;
-    color:white;
+    margin-top: 10px;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.search-bar input{
+    padding: 10px;
+    width: 100%;
+}
+
+.search-bar button{
+    padding:5px 20px;
 }
