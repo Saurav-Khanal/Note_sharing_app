@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../api/api";
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState([]);
