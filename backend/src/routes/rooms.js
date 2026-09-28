@@ -6,6 +6,7 @@ const{
     joinRoom,
     getMyRooms,
     regenerateCode,
+    deleteRoom,
 }=require("../controllers/roomController");
 const {protect}=require("../middleware/auth");
 
@@ -13,5 +14,5 @@ router.post("/",protect,createRoom);
 router.post("/join",protect,joinRoom);
 router.get("/my",protect,getMyRooms);
 router.post("/:id/regenerate",protect,regenerateCode);
-
+router.delete("/:id",protect,deleteRoom);
 module.exports=router;

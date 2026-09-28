@@ -39,5 +39,21 @@ p{
     justify-content: space-between;
     border:2px solid black;
     padding: 10px 20px;
+    margin-top:10px;
+    margin-bottom: 15px;
 }
 
+.note-actions{
+    display: flex;
+    gap:15px;
+    align-items: center;
+}
+
+.delete-note-btn{
+    background-color: transparent;
+    border: none;
+    color:red;
+    cursor:pointer;
+    font-size:14px;
+    text-decoration: underline;
+}

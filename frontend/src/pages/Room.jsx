@@ -47,6 +47,17 @@ const Room = () => {
     };
     fetchNotes();
   }, [id]);
+
+  const handleDeleteNote=async(noteId)=>{
+    if(!window.confirm("Delete this note?")) return;
+    try{
+      await api.delete(`/notes/${noteId}`);
+      setNotes(notes.filter((n)=>n._id!==noteId));
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   return (
     <div className="room-container">
       <div className="room-nav">
@@ -94,6 +105,13 @@ const Room = () => {
               >
                 view
               </a>
+              {user.role==="teacher"&&(
+                <button
+                className="delete-note-btn"
+                onClick={()=> handleDeleteNote(note._id)}
+                >Delete</button>
+
+              )}
             </div>
           ))
         )}

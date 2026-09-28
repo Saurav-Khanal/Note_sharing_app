@@ -27,9 +27,8 @@ margin-bottom: 20px;
 }
 
 .Rooms{
-    margin:20px;
+    margin-top:20px;
 }
-
 .Room-name{
     display: flex;
     justify-content: space-between;
@@ -85,4 +84,9 @@ padding: 5px 10px;
 
 .search-bar button{
     padding:5px 20px;
+}
+
+.delete-btn{
+    padding:5px 20px;
+    cursor: pointer;
 }

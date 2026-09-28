@@ -70,6 +70,16 @@ const Dashboard = () => {
     }
   };
 
+  const handleDeleteRoom=async(roomId)=>{
+    if(!window.confirm("Delete this room?")) return;
+    try{
+      await api.delete(`/rooms/${roomId}`);
+      setRooms(rooms.filter((r)=>r._id!==roomId));
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   if (!user) return null;
   return (
     <div className="dash-container">
@@ -147,6 +157,11 @@ const Dashboard = () => {
               >
                 open
               </button>
+              {user.role==="teacher"&&(
+                <button className="delete-btn" onClick={()=>handleDeleteRoom(room._id)}>
+                  Delete
+                </button>
+              )}
             </div>
           </div>
         ))}

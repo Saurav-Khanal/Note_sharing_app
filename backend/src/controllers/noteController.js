@@ -81,4 +81,22 @@ const searchNotes = async (req, res) => {
   }
 };
 
-module.exports={uploadNote,getRoomNotes,searchNotes};
+const deleteNote=async (req,res)=>{
+    try{
+        const note=await Note.findById(req.params.id);
+        if(!note){
+            return res.status(404).json({message:"Note not found"});
+        }
+        const room=await Room.findById(note.room);
+        if(room.teacher.toString()!==req.user._id.toString()){
+            return res.status(403).json({message:"only the room teacher can delete notes"})
+        }
+        await note.deleteOne();
+        res.json({message:"Note deleted"});
+    }catch(err){
+        res.status(500).json({message:err.message});
+    }
+}
+
+
+module.exports={uploadNote,getRoomNotes,searchNotes,deleteNote};
