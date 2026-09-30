@@ -74,19 +74,19 @@ npm run dev
 ## Screenshots
 
 ### Login
-![Login](./screenshots/login.png)
+![Login](./Screenshots/login.png)
 
 ### Signup
-![Signup](./screenshots/signup.png)
+![Signup](./Screenshots/signup.png)
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](./Screenshots/dashboard.png)
 
 ### Room with Notes
-![Room](./screenshots/room.png)
+![Room](./Screenshots/room.png)
 
 ### Upload Note
-![Upload](./screenshots/upload.png)
+![Upload](./Screenshots/upload.png)
 
 
 
