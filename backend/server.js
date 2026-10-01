@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
 });
 
 mongoose.connect(process.env.MONGO_URI)
-.then(()=>console.log("Mongo db connected"))
-.catch(()=>console.log(err));
+  .then(() => console.log("Mongo db connected"))
+  .catch((err) => console.log(err));   
 
 const port=process.env.PORT || 5000;
 app.use("/api/auth",require("./src/routes/auth.js"))
