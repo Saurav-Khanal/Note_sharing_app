@@ -1,6 +1,10 @@
 # Notesapp
 notesapp is a simple website where the student and teacher can signup and share the note.teacher get the code once signup and the teacher can share that code with the student to invite them in the room to get access of note.i built this because in my classroom teacher send the notes in the messenger and after few days that notes get lost in the chat.and i feel the notes is not quite organized and difficult to see which note is what and  i feel time consuming.
 
+## Live Demo
+
+https://note-sharing-app-gamma.vercel.app
+
 
 ## Motivation
 i personally feel the problem while finding the note in messenger app.so i thought why not to make the notes app where we can organized our note and find also when needed and also sharp by backend knowledge.
