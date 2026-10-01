@@ -5,6 +5,15 @@ notesapp is a simple website where the student and teacher can signup and share 
 
 https://note-sharing-app-gamma.vercel.app
 
+## How To Use
+
+1. open the live link
+2. sigunp as teacher (any email and password)
+3. create a room and copy the code
+4. upload a note (pdf or iamge)
+5. logout and signup as student
+6. join the room using the code
+7. you can see the note and search also
 
 ## Motivation
 i personally feel the problem while finding the note in messenger app.so i thought why not to make the notes app where we can organized our note and find also when needed and also sharp by backend knowledge.
@@ -107,3 +116,5 @@ i used chatgpt and deepseek for understanding the backend logic related authenti
 
 - Email verification for signup
 - Password reset
+- Use Cloudinary or S3 for file storage because files wiped when Render free tier restarts
+
