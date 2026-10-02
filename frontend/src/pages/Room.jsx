@@ -99,7 +99,7 @@ const Room = () => {
                 <p>{note.subject}</p>
               </div>
               <a
-              href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${note.fileUrl}`}
+              href={`http://localhost:5000${note.fileUrl}`}
                 target="_blank"
                 rel="noreferrer"
               >

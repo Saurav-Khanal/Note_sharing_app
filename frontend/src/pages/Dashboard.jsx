@@ -58,6 +58,7 @@ const Dashboard = () => {
   };
 
   const handleSearch = async () => {
+     console.log("Search clicked:", searchQuery);   // ← add this
     if (!searchQuery.trim()) {
       setSearchResults([]);
       return;
@@ -151,17 +152,16 @@ const Dashboard = () => {
                 <h2>{room.name}</h2>
                 <p>code:{room.code}</p>
               </div>
-              <button
-                className="open"
-                onClick={() => navigate(`/room/${room._id}`)}
-              >
+              <div className="room-buttons">
+                <button className="open" onClick={()=>navigate(`/room/${room._id}`)}>
                 open
-              </button>
+                </button>
               {user.role==="teacher"&&(
                 <button className="delete-btn" onClick={()=>handleDeleteRoom(room._id)}>
                   Delete
                 </button>
               )}
+              </div>
             </div>
           </div>
         ))}
