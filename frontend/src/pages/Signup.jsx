@@ -42,7 +42,7 @@ const Signup = () => {
             <button type="submit">Signup</button>
           </form>
           {error && <p className="signup-error">{error}</p>}
-          <p>
+          <p className="p">
           Already have account? <Link to="/login">Login</Link>
         </p>
       </div>
