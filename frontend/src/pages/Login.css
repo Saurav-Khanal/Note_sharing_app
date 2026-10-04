@@ -8,9 +8,7 @@
 
 .login-box {
   width: 340px;
-  border: 2px solid black;
   padding: 80px 50px;
-  margin: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
@@ -40,6 +38,7 @@
   color:white;
   border: none;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .login-error {
