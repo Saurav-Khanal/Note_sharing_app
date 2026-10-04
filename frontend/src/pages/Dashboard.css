@@ -1,6 +1,9 @@
+*{
+    box-sizing: border-box;
+}
 .dash-container{
     min-height: 100vh;
-    padding: 20px;
+    padding: 20px 40px;
     background: #f5f6fa;
 }
 
@@ -9,7 +12,7 @@
     justify-content: space-between;
     padding-bottom: 10px;
     align-items: center;
-    padding: 12px 20px;
+    padding: 15px 25px;
     background:#4f46e5;
     color:white;
     border-radius: 8px;

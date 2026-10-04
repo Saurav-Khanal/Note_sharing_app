@@ -31,6 +31,7 @@ const Signup = () => {
       <div className="signup-container">
         <div className="signup-box">
           <h1>Signup</h1>
+          <p className="signup-desc">Create your account to start sharing notes</p>
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Enter your name" onChange={(e)=>setName(e.target.value)}/>
             <input type="text" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)} />

@@ -27,6 +27,9 @@ const Login = () => {
     <div className="login-container">
       <div className="login-box">
         <h1 className="login-h1">Login here</h1>
+        <p className="login-desc">
+          A simple app where teacher create rooms and share notes with students
+        </p>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

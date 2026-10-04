@@ -1,21 +1,28 @@
+*{
+  box-sizing: border-box;
+}
 .signup-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .signup-box {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  width: 300px;
-  padding: 20px;
+  width: 340px;
+  padding: 40px 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
+  background: white;
 }
 
 .signup-box h1 {
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color:#333;
+  margin-bottom: 8px;
 }
 
 .signup-box form {
@@ -57,4 +64,12 @@ border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   margin-left: 5px;
+}
+
+.signup-desc{
+  text-align: center;
+  font-size: 13px;
+  color:#777;
+  margin-bottom: 25px;
+  line-height: 1.4;
 }

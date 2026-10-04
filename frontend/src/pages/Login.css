@@ -1,24 +1,33 @@
+*{
+  box-sizing: border-box;
+}
 .login-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 20px;
 }
 
 .login-box {
   width: 340px;
-  padding: 80px 50px;
+  padding: 40px 30px;
+  background: white;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
 }
 
+.login-h1{
+  text-align: center;
+  font-size: 24px;
+  color:#333;
+  margin-bottom: 8px;
+}
+
 .login-box form {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .login-box input {
@@ -62,3 +71,10 @@
   margin-left: 5px;
 }
 
+.login-desc{
+  text-align: center;
+  font-size: 13px;
+  color:#777;
+  margin-bottom: 20px;
+  line-height: 1.4;;
+}
