@@ -1,6 +1,7 @@
 .dash-container{
     min-height: 100vh;
     padding: 20px;
+    background: #f5f6fa;
 }
 
 .dash-nav{
@@ -21,9 +22,6 @@
     gap:15px;
 }
 
-.dash-nav {
-  border-bottom: 2px solid black;
-}
 
 .room-space{
 display: flex;
@@ -96,7 +94,7 @@ margin-bottom: 20px;
     color: #dc2626;
 }
 .logout-button{
-padding: 5px 10px;
+padding: 8px 18px;
 background: white;
 color:#4f46e5;
 border:none;
