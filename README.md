@@ -89,8 +89,9 @@ npm run dev
 - Frontend: Vercel
 - Backend: Render
 - Database: MongoDB Atlas
+- Uptime Monitor: UptimeRobot(it keeps Render backend awake)
 
-## Screenshots
+## Screenshots  
 
 ### Login
 ![Login](./Screenshots/login.png)
@@ -110,11 +111,11 @@ npm run dev
 
 
 ## AI Disclosure
-i used chatgpt and deepseek for understanding the backend logic related authentication and to debug some syntax error.
+i used chatgpt and deepseek for understanding the backend logic related authentication and to debug some syntax error.also used it while debuging deplyoment problems (env variables, cors, mongodb atlas setup).
 
 ## Future Improvements
 
 - Email verification for signup
 - Password reset
-- Use Cloudinary or S3 for file storage because files wiped when Render free tier restarts
+- Use Cloudinary for file storage because files delete when render free tier restarts
 
