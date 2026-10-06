@@ -35,7 +35,7 @@ i personally feel the problem while finding the note in messenger app.so i thoug
 
 ## Features
 
-- **Authentication:** JWT-based auth with hashed passwords using bcrypt
+- **Authentication:** jwt-based auth with hashed passwords using bcrypt
 - **Room System:** Teachers create room and share the code students join using the code
 - **File Upload:** Teachers can upload notes as PDF or images using Multer
 - **Role-Based Access:** Only teachers can uplod and delete notes and rooms
@@ -43,8 +43,8 @@ i personally feel the problem while finding the note in messenger app.so i thoug
 - **Access Control:** Only room members can view the notes
 
 ## Challanges I faced
-
-while bulding this i face many problems.jwt autentication was confuseing for me at first.i did'nt understand how token works and where to store it.file upload with multer was also hard.i didn't know form-data thing. and lot of error happeing. but slowly i fix all and learn many things.and i faced some problem with backend controller syntax error especailly.
+file upload with multer confused me .i didn't know form-data thing. and lot of error happeing. but slowly i fix all and learn many things.and i faced some problem with backend controller syntax error especailly.
+the hardest part was deployment.i spend 1 hours debudding error on signup. many problem was there env variables not set on render and mongodb atlas password was also wrog. i check every layer and reading logs help me find acutal problem. also i learn that render free tier restart and delete the uploaded files.so for reap app i need cloudinary.and as i using my app and i see one problem for the signup login it take the more than 15 sec if i open it after some hour so i find its problem because render server get sleep aftet 15 minute so it delayed to login that problem i fixed using the uptimerobot.
 
 ## How To Run
 
