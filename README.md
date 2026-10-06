@@ -1,4 +1,4 @@
-# Notesapp
+# Note-sharing-app
 notesapp is a simple website where the student and teacher can signup and share the note.teacher get the code once signup and the teacher can share that code with the student to invite them in the room to get access of note.i built this because in my classroom teacher send the notes in the messenger and after few days that notes get lost in the chat.and i feel the notes is not quite organized and difficult to see which note is what and  i feel time consuming.
 
 ## Live Demo
