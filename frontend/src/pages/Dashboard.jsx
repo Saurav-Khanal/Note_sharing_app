@@ -176,7 +176,7 @@ const Dashboard = () => {
                     <p>{note.subject}</p>
                     </div>
                     <a
-                    href={`${import.meta.env.VITE_API_URL.replace("/api", "")}${note.fileUrl}`}
+                    href={`${(import.meta.env.VITE_API_URL || "http://localhost:5000/api").replace("/api", "")}${note.fileUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     >
