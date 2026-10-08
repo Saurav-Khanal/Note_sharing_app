@@ -12,6 +12,7 @@ const Dashboard = () => {
   const [showJoin, setShowJoin] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [error,setError]=useState("");
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -42,12 +43,13 @@ const Dashboard = () => {
 
   const handleJoinRoom = async () => {
     if (!joinCode.trim()) return;
+    setError()
     try {
       const res = await api.post("/rooms/join", { code: joinCode });
       setRooms([...rooms, res.data.room]);
-      setJoinCode("");
+      setJoinCode(false);
     } catch (err) {
-      console.log(err);
+      setError(err.response?.data?.message||"failed to join room");
     }
   };
 
@@ -135,6 +137,7 @@ const Dashboard = () => {
         )}
 
         {showJoin && user.role === "student" && (
+          <>
           <div className="input-box">
             <input
               placeholder="Enter room code"
@@ -143,6 +146,8 @@ const Dashboard = () => {
             />
             <button onClick={handleJoinRoom}>Join</button>
           </div>
+          {error && <p className="dash-error">{error}</p>}
+          </>
         )}
 
         {rooms.map((room) => (
