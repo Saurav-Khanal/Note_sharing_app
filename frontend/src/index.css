@@ -17,13 +17,13 @@
   }
 
   .dash-nav,
-  .room-nav{
+  .room-nav {
     padding: 12px 15px;
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
-  .side-area{
+  .side-area {
     width: 100%;
     justify-content: space-between;
   }
@@ -38,24 +38,25 @@
   .Room-name,
   .note-card {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 12px;
   }
   .room-buttons,
-  .note-actions{
-    width: 100%;
-    justify-content: flex-end;
-    gap:8px;
+  .note-actions {
+    justify-content: center;
   }
-
-  .room-info h2{
+  .room-info {
+    align-items: center;
+  }
+  .room-info h2 {
     font-size: 15px;
   }
-  .room-info p{
+  .room-info p {
     font-size: 12px;
     word-break: keep-all;
   }
-  .upload-form{
+  .upload-form {
     width: 100%;
   }
 }
