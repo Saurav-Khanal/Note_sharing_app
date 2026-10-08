@@ -1,5 +1,61 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .login-box,
+  .signup-box {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .dash-container,
+  .room-container {
+    padding: 15px;
+  }
+
+  .dash-nav,
+  .room-nav{
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .side-area{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .room-space {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .search-bar {
+    flex-direction: column;
+  }
+  .Room-name,
+  .note-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .room-buttons,
+  .note-actions{
+    width: 100%;
+    justify-content: flex-end;
+    gap:8px;
+  }
+
+  .room-info h2{
+    font-size: 15px;
+  }
+  .room-info p{
+    font-size: 12px;
+    word-break: keep-all;
+  }
+  .upload-form{
+    width: 100%;
+  }
 }
